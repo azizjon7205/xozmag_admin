@@ -1,0 +1,109 @@
+{
+  "base": {
+    "name": "Nomi",
+    "status": "Status",
+    "search_hint": "Qidiruv...",
+    "actions": {
+      "label": "Amallar",
+      "confirm": "Tasdiqlash",
+      "delete": "O'chirish",
+      "upload": "Yuklash",
+      "continue": "Davom etish",
+      "cancel": "Bekor qilish",
+      "back": "Ortga",
+      "sort": "Saralash",
+      "edit": "Tahrirlash",
+      "add": "Qo'shish",
+      "setup": "Sozlash",
+      "save": "Saqlash",
+      "change": "O'zgartirish"
+    }
+  },
+  "language": {
+    "title": "Тилни танланг",
+    "description": "Tilni tanlagandan so’ng, tilni o’zgartirish uchun ilovadan profile bo’limidan o’rgartirishingiz mumkin",
+    "uzbek": "O'zbek tili",
+    "cyrillic": "Ўзбек тили",
+    "russian": "Русский язык",
+    "uz_label": "(O'zb)",
+    "cyril_label": "(Ўзб)",
+    "ru_label": "(Рус)"
+  },
+  "login": {
+    "title": "Akkauntga kirish",
+    "subtitle": "Kirish detallarini kiriting",
+    "action_title": "Login",
+    "login_label": "Login",
+    "password_label": "Parol"
+  },
+  "category": {
+    "label": "Kategoriya",
+    "title": "Kategoriyalar",
+    "subtitle": "Yangi kategoriyalarni qo'shing yoki ularni boshqaring",
+    "upload_image_title": "Rasm qo'shish",
+    "upload_image_subtitle": "Min 400x400px, PNG or JPEG",
+    "create_title": "Kategoriya qo’shish",
+    "create_subtitle": "Qo’shmoqchi bo’lgan kategoriyangiz oldin mavjud bo’lmasligi kerak",
+    "status_label": "Bu kategoriya holati aktivligi",
+    "choose_hint": "Kategoriya tanlang"
+  },
+  "subcategory": {
+    "label": "Ichki kategoriya",
+    "title": "Kategoriyalar",
+    "subtitle": "Yangi ichki kategoriyalarni qo'shing yoki ularni boshqaring",
+    "category_label": "(Ulamoqchi bo'lgan kategoriya)",
+    "create_title": "Ichki kategoriya qo'shish",
+    "create_subtitle": "Qo’shmoqchi bo’lgan ichgi kategoriyangiz oldin mavjud bo’lmasligi kerak"
+  },
+  "product": {
+    "page_title": "Tovar qo'shish",
+    "page_subtitle": "Yangi mahsulotlarni qo'shing yoki ularni boshqaring",
+    "description": "To'liq ma'lumot",
+    "media": {
+      "header": "Rasm yoki video yuklash",
+      "title": "Rasm yoki video yuklang",
+      "subtitle": "JPEG, PNG yoki MP4 formatlarda, 5 MBdan kichik file.",
+      "edit": "Rasmni o'zgartirish"
+    },
+    "details": {
+      "header": "Tovar ma'lumotlari",
+      "category": "Kategoriya",
+      "category_hint": "Kategoriya tanlang",
+      "subcategory": "Ichki kategoriya",
+      "subcategory_hint": "Ichki kategoriya tanlang",
+      "short_info": "Qisqacha ma'lumot",
+      "short_info_hint_uz": "Tovarning qisqa ma'lumotlarini kiriting",
+      "short_info_hint_cyril": "Tovarning qisqa ma'lumotlarini kiriting",
+      "short_info_hint_ru": "Tovarning qisqa ma'lumotlarini kiriting",
+      "short_info_helper": "Bu tovar ichida qisqa ko'rinib turadigan ma'lumotlar uchun"
+    },
+    "attributes": {
+      "header": "Tovar turlari",
+      "label": "Tovar",
+      "add_product": "Tovar qo'shish",
+      "status_label": "Bu tovar holati aktivligi",
+      "colors_label": "Tovar ranglari",
+      "color_hint": "Rang tanlang",
+      "input_type": "Raqam...",
+      "weight": "Og'irligi",
+      "capacity": "Hajmi",
+      "two_dimensional": "2 o'lchami tovar",
+      "three_dimensional": "3 o'lchami tovar",
+      "amount": "Miqdori",
+      "amount_value": "{} ta",
+      "amount_hint": "dona",
+      "price": "Narxi",
+      "price_currency": "So'mda",
+      "discount": "Chegirma",
+      "type_price": "(narxda)",
+      "type_percent": "(foizda)",
+      "height": "Bo'yi",
+      "width": "Eni",
+      "thick": "Qalinligi"
+    },
+    "item": {
+      "attr_amount": "{} xil tovar",
+      "amount": "{} ta tovar"
+    }
+  }
+}
