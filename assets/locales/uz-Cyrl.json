@@ -105,5 +105,23 @@
       "attr_amount": "{} xil tovar",
       "amount": "{} ta tovar"
     }
+  },
+  "staff": {
+    "title": "Xodimlar",
+    "subtitle": "Yangi xodimlar qo'shing yoki ularni boshqaring",
+    "create_title": "Yangi xodim qo'shish",
+    "create_subtitle": "Qo’shmoqchi bo’lgan xodim oldin mavjud bo’lmasligi kerak",
+    "image_title": "Profile photo",
+    "image_subtitle": "Min 400x400px, PNG or JPEG",
+    "full_name": "F.I.Sh",
+    "full_name_hint": "Ism-sharif",
+    "phone_number": "Telefon raqami",
+    "phone_hint": "+998...",
+    "role": "Roli",
+    "role_hint": "Rol tanlang",
+    "login": "Login",
+    "password": "Parol",
+    "password_hint": "Kamida 8ta belgi",
+    "status_subtitle": "Bu xodim aktivligi"
   }
 }
