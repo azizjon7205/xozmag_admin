@@ -15,7 +15,7 @@ class AuthApiImpl extends AuthApi{
   @override
   Future<User> loginUser(UserParams params) async{
     final result = await network.post<User>(
-        '',
+        'put api here without base url',
         data: params.toJson(),
         tFromJson: User.fromJson);
     if (result.success == true && result.data != null) {

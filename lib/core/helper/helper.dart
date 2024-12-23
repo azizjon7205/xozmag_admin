@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:device_info_plus/device_info_plus.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/services.dart';
 
 import '../../shared/data/data_sources/local/app_shared_prefs.dart';
@@ -63,5 +64,9 @@ class Helper {
     }..removeWhere((key, value) => value == null);
   }
 
+  static String dateFormat(DateTime date) {
+    String formattedDate = DateFormat('dd / MM / yyyy').format(date);
+    return formattedDate;
+  }
 
 }

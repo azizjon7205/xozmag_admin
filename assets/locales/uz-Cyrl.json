@@ -3,6 +3,8 @@
     "name": "Nomi",
     "status": "Status",
     "search_hint": "Qidiruv...",
+    "from": "dan",
+    "to": "gacha",
     "actions": {
       "label": "Amallar",
       "confirm": "Tasdiqlash",
@@ -16,7 +18,8 @@
       "add": "Qo'shish",
       "setup": "Sozlash",
       "save": "Saqlash",
-      "change": "O'zgartirish"
+      "change": "O'zgartirish",
+      "reset": "O'z holiga qaytarish"
     }
   },
   "language": {
@@ -123,5 +126,46 @@
     "password": "Parol",
     "password_hint": "Kamida 8ta belgi",
     "status_subtitle": "Bu xodim aktivligi"
+  },
+  "order": {
+    "title": "Buyurtmalar",
+    "subtitle": "Tushgan buyurtmalarni va ularning holatini boshqaring",
+    "total": "Jami buyurtmalar",
+    "in_progress": "Jarayondagi buyurtmalar",
+    "completed": "Tugallangan buyurtmalar",
+    "id": "Buyurtma id",
+    "customer": {
+      "phone": "Buyurtmachi raqami"
+    },
+    "status": {
+      "label": "Holati"
+    },
+    "payment": {
+      "type": "To'lov turi",
+      "total": "Umumiy (so'm)"
+    },
+    "filter": {
+      "title": "Filter",
+      "subtitle": "Qidirmoqchi bo’lgan tovarlarinigiz turini tanlang",
+      "status": {
+        "label": "Bajarilgan ish holatlari",
+        "hint": "Hammasi"
+      },
+      "by_date": {
+        "label": "Sana bo'yicha"
+      },
+      "by_price": {
+        "label": "Buyurtma narxi bo'yicha",
+        "hint": "Hammasi",
+        "cheap": "Arzonroq",
+        "expensive": "Qimmatroq",
+        "from": "dan",
+        "to": "gacha"
+      },
+      "payment_type": {
+        "label": "To'luv turi",
+        "hint": "Hammasi"
+      }
+    }
   }
 }

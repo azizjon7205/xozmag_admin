@@ -13,7 +13,7 @@ ThemeData getAppTheme(BuildContext context, AppPalette palette, Brightness brigh
     brightness: brightness,
     primaryColor: palette.primary,
     scaffoldBackgroundColor: palette.bgWhite,
-    appBarTheme: AppBarTheme(color: palette.white),
+    appBarTheme: AppBarTheme(color: palette.bgWhite),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         minimumSize: const Size(double.infinity, 40),
@@ -70,6 +70,30 @@ ThemeData getAppTheme(BuildContext context, AppPalette palette, Brightness brigh
         }
         return colors(context).strokeSoft;
       })
+    ),
+    datePickerTheme: DatePickerThemeData(
+      dayBackgroundColor: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.selected)) {
+          return palette.primary;
+        }
+        return Colors.transparent;
+      }),
+      todayBackgroundColor: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.selected)) {
+          return palette.primary;
+        }
+        return Colors.transparent;
+      }),
+      todayBorder: BorderSide(
+          color: palette.strokeSoft,width: 1
+      ),
+      dayShape: WidgetStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0))),
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8.0)
+      ),
+      dayStyle: AppTextStyles.paragraphLarge,
+      yearStyle: AppTextStyles.subheadMedium,
+      headerHeadlineStyle: AppTextStyles.subheadMedium,
     )
   );
 }
