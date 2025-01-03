@@ -4,11 +4,10 @@ import 'dart:io';
 import 'package:chucker_flutter/chucker_flutter.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:xozmag_admin/shared/models/app_error.dart';
 
-import '../../features/auth/domain/entities/auth_success.dart';
-import '../../shared/data/data_sources/local/app_shared_prefs.dart';
-import '../../shared/models/api_response.dart';
+import '/features/auth/domain/entities/auth_success.dart';
+import '/shared/data/data_sources/local/app_shared_prefs.dart';
+import '/shared/models/api_response.dart';
 import '../helper/helper.dart';
 import '../utils/log/app_logger.dart';
 import 'logger_interceptor.dart';
@@ -28,16 +27,15 @@ class ApiService {
     _dio.interceptors.add(_interceptorsWrapper());
   }
 
-  // GET request
-  Future<ApiResponse<T>> get<T>(
-    String path, {
-    required Function tFromJson,
-    Object? data,
-    Map<String, dynamic>? queryParameters,
-    Options? options,
-    CancelToken? cancelToken,
-    ProgressCallback? onReceiveProgress,
-  }) async {
+  Future<T> get<T>(
+      String path, {
+        required Function tFromJson,
+        Object? data,
+        Map<String, dynamic>? queryParameters,
+        Options? options,
+        CancelToken? cancelToken,
+        ProgressCallback? onReceiveProgress,
+      }) async {
     try {
       final response = await _dio.get(
         path,
@@ -47,32 +45,34 @@ class ApiService {
         cancelToken: cancelToken,
         onReceiveProgress: onReceiveProgress,
       );
-
-
       if (response.data != null) {
         final result = ApiResponse<T>.fromJson(
           response.data,
           tFromJson,
         );
-        return result;
+        if (result.data != null) {
+          return result.data!;
+        } else {
+          throw result.error ?? Exception('Something went wrong');
+        }
       } else {
-        throw AppError(message: "Something went wrong");
+        throw Exception('Network Error: ${response.statusMessage}');
       }
-    } on DioException catch (e) {
-      throw _handleError(e);
+    } catch (error) {
+      _handleError(error);
+      rethrow;
     }
   }
 
-  Future<ApiResponse<T>> post<T>(
-    String path, {
-    required Function tFromJson,
-    Object? data = const {},
-    Map<String, dynamic>? queryParameters,
-    Options? options,
-    CancelToken? cancelToken,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
+  Future<T> post<T>(
+      String path, {
+        required Function tFromJson,
+        Object? data,
+        Map<String, dynamic>? queryParameters,
+        Options? options,
+        CancelToken? cancelToken,
+        ProgressCallback? onReceiveProgress,
+      }) async {
     try {
       final response = await _dio.post(
         path,
@@ -80,34 +80,36 @@ class ApiService {
         queryParameters: queryParameters,
         options: options,
         cancelToken: cancelToken,
-        onSendProgress: onSendProgress,
         onReceiveProgress: onReceiveProgress,
       );
-      final result = ApiResponse<T>.fromJson(
-        response.data,
-        tFromJson,
-      );
-
-      if (result.success == true) {
-        return result;
+      if (response.data != null) {
+        final result = ApiResponse<T>.fromJson(
+          response.data,
+          tFromJson,
+        );
+        if (result.data != null) {
+          return result.data!;
+        } else {
+          throw result.error ?? Exception('Something went wrong');
+        }
       } else {
-        throw result.error ?? AppError(message: "Something went wrong");
+        throw Exception('Network Error: ${response.statusMessage}');
       }
-    } on DioException catch (e) {
-      throw _handleError(e);
+    } catch (error) {
+      _handleError(error);
+      rethrow;
     }
   }
 
-  Future<ApiResponse<T>> put<T>(
-    String path, {
-    required Function tFromJson,
-    Object? data = const {},
-    Map<String, dynamic>? queryParameters,
-    Options? options,
-    CancelToken? cancelToken,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
+  Future<T> put<T>(
+      String path, {
+        required Function tFromJson,
+        Object? data,
+        Map<String, dynamic>? queryParameters,
+        Options? options,
+        CancelToken? cancelToken,
+        ProgressCallback? onReceiveProgress,
+      }) async {
     try {
       final response = await _dio.put(
         path,
@@ -115,34 +117,36 @@ class ApiService {
         queryParameters: queryParameters,
         options: options,
         cancelToken: cancelToken,
-        onSendProgress: onSendProgress,
         onReceiveProgress: onReceiveProgress,
       );
-      final result = ApiResponse<T>.fromJson(
-        response.data,
-        tFromJson,
-      );
-
-      if (result.success == true) {
-        return result;
+      if (response.data != null) {
+        final result = ApiResponse<T>.fromJson(
+          response.data,
+          tFromJson,
+        );
+        if (result.data != null) {
+          return result.data!;
+        } else {
+          throw result.error ?? Exception('Something went wrong');
+        }
       } else {
-        throw result.error ?? AppError(message: "Something went wrong");
+        throw Exception('Network Error: ${response.statusMessage}');
       }
-    } on DioException catch (e) {
-      throw _handleError(e);
+    } catch (error) {
+      _handleError(error);
+      rethrow;
     }
   }
 
-  Future<ApiResponse<T>> patch<T>(
-    String path, {
-    required Function tFromJson,
-    Object? data = const {},
-    Map<String, dynamic>? queryParameters,
-    Options? options,
-    CancelToken? cancelToken,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
+  Future<T> patch<T>(
+      String path, {
+        required Function tFromJson,
+        Object? data,
+        Map<String, dynamic>? queryParameters,
+        Options? options,
+        CancelToken? cancelToken,
+        ProgressCallback? onReceiveProgress,
+      }) async {
     try {
       final response = await _dio.patch(
         path,
@@ -150,32 +154,36 @@ class ApiService {
         queryParameters: queryParameters,
         options: options,
         cancelToken: cancelToken,
-        onSendProgress: onSendProgress,
         onReceiveProgress: onReceiveProgress,
       );
-      final result = ApiResponse<T>.fromJson(
-        response.data,
-        tFromJson,
-      );
-
-      if (result.success == true) {
-        return result;
+      if (response.data != null) {
+        final result = ApiResponse<T>.fromJson(
+          response.data,
+          tFromJson,
+        );
+        if (result.data != null) {
+          return result.data!;
+        } else {
+          throw result.error ?? Exception('Something went wrong');
+        }
       } else {
-        throw result.error ?? AppError(message: "Something went wrong");
+        throw Exception('Network Error: ${response.statusMessage}');
       }
-    } on DioException catch (e) {
-      throw _handleError(e);
+    } catch (error) {
+      _handleError(error);
+      rethrow;
     }
   }
 
-  Future<ApiResponse<T>> delete<T>(
-    String path, {
-    required Function tFromJson,
-    Object? data = const {},
-    Map<String, dynamic>? queryParameters,
-    Options? options,
-    CancelToken? cancelToken,
-  }) async {
+  Future<T> delete<T>(
+      String path, {
+        required Function tFromJson,
+        Object? data,
+        Map<String, dynamic>? queryParameters,
+        Options? options,
+        CancelToken? cancelToken,
+        ProgressCallback? onReceiveProgress,
+      }) async {
     try {
       final response = await _dio.delete(
         path,
@@ -184,30 +192,44 @@ class ApiService {
         options: options,
         cancelToken: cancelToken,
       );
-      final result = ApiResponse<T>.fromJson(
-        response.data,
-        tFromJson,
-      );
-
-      if (result.success == true) {
-        return result;
+      if (response.data != null) {
+        final result = ApiResponse<T>.fromJson(
+          response.data,
+          tFromJson,
+        );
+        if (result.data != null) {
+          return result.data!;
+        } else {
+          throw result.error ?? Exception('Something went wrong');
+        }
       } else {
-        throw result.error ?? AppError(message: "Something went wrong");
+        throw Exception('Network Error: ${response.statusMessage}');
       }
-    } on DioException catch (e) {
-      throw _handleError(e);
+    } catch (error) {
+      _handleError(error);
+      rethrow;
     }
   }
 
   // Error Handling
-  Exception _handleError(DioException error) {
-    if (error.response != null) {
-      // Server-side error
-      return AppError(
-          message: 'Server Error: ${error.response?.data['message']}');
+  void _handleError(Object error) {
+    if (error is DioException) {
+      // Map Dio errors to user-friendly messages
+      switch (error.type) {
+        case DioExceptionType.connectionTimeout:
+          throw Exception('Connection Timeout');
+        case DioExceptionType.receiveTimeout:
+          throw Exception('Receive Timeout');
+        case DioExceptionType.badResponse:
+          debugPrint('Server Error: ${error.response?.data}');
+          throw Exception('Server Error: ${error.response?.data['message']}');
+        case DioExceptionType.connectionError:
+          throw Exception('Network Error: ${error.message}');
+        default:
+          throw Exception('Unexpected Error: ${error.message}');
+      }
     } else {
-      // Client-side error
-      return AppError(message: 'Network Error: ${error.message}');
+      throw Exception('Unexpected Error: $error');
     }
   }
 
@@ -248,7 +270,7 @@ class ApiService {
         if (e.response?.statusCode == 401 &&
             _sharedPrefs.getAuthToken() != null) {
           try {
-            final response = await _dio.post('/mobile/auth/refresh', data: {
+            final response = await _dio.post('/api/v1/auth/refresh-token', data: {
               'refresh_token': _sharedPrefs.getRefreshToken(),
             });
             if (response.statusCode == 200) {

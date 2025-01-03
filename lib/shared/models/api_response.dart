@@ -1,7 +1,5 @@
 import 'package:flutter/foundation.dart';
 
-import 'app_error.dart';
-
 class ApiResponse<T> {
   const ApiResponse({
     required this.success,
@@ -13,7 +11,7 @@ class ApiResponse<T> {
 
   final bool? success;
   final T? data;
-  final AppError? error;
+  final String? error;
   final dynamic status;
   final String? message;
 
@@ -24,13 +22,7 @@ class ApiResponse<T> {
         status: json['status'],
         success: json["success"],
         data: json["data"] != null ? dataFromJson(json["data"]) : null,
-        error: json["error"] != null
-            ? json['error'] == null
-                ? AppError()
-                : json["error"] is String
-                    ? AppError(message: json['error'])
-                    : AppError.fromJson(json["error"])
-            : null,
+        error: json["error"],
       );
 
   const ApiResponse.success(T data, [String message = ''])
@@ -42,19 +34,11 @@ class ApiResponse<T> {
           error: null,
         );
 
-  const ApiResponse.error(AppError error, [String message = ''])
-      : this(
-          message: message,
-          status: 0,
-          success: false,
-          data: null,
-          error: error,
-        );
 
   Map<String, dynamic> toJson(Function(T? data) dataToJson) => {
         "success": success,
         "data": dataToJson(data),
-        "error": error?.toJson(),
+        "error": error,
         'message': message,
         'status': status,
       };

@@ -1,3 +1,6 @@
+
+// change entities based on api response
+
 class User {
   dynamic id;
   String fullName;
