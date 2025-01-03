@@ -53,7 +53,7 @@ class ApiService {
         if (result.data != null) {
           return result.data!;
         } else {
-          throw result.error ?? Exception('Something went wrong');
+          throw Exception(result.message);
         }
       } else {
         throw Exception('Network Error: ${response.statusMessage}');
@@ -90,7 +90,7 @@ class ApiService {
         if (result.data != null) {
           return result.data!;
         } else {
-          throw result.error ?? Exception('Something went wrong');
+          throw Exception(result.message);
         }
       } else {
         throw Exception('Network Error: ${response.statusMessage}');
@@ -127,7 +127,7 @@ class ApiService {
         if (result.data != null) {
           return result.data!;
         } else {
-          throw result.error ?? Exception('Something went wrong');
+          throw Exception(result.message);
         }
       } else {
         throw Exception('Network Error: ${response.statusMessage}');
@@ -164,7 +164,7 @@ class ApiService {
         if (result.data != null) {
           return result.data!;
         } else {
-          throw result.error ?? Exception('Something went wrong');
+          throw Exception(result.message);
         }
       } else {
         throw Exception('Network Error: ${response.statusMessage}');
@@ -200,7 +200,7 @@ class ApiService {
         if (result.data != null) {
           return result.data!;
         } else {
-          throw result.error ?? Exception('Something went wrong');
+          throw Exception(result.message);
         }
       } else {
         throw Exception('Network Error: ${response.statusMessage}');
