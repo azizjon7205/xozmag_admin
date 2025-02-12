@@ -1,7 +1,4 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:xozmag_admin/features/staff/domain/entities/staff_media.dart';
 
 class MediaModelUI {
   dynamic id;
@@ -20,4 +17,3 @@ class MediaModelUI {
     this.filePath,
   });
 }
-

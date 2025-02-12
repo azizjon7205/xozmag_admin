@@ -2,16 +2,15 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
-import 'package:xozmag_admin/core/styles/app_colors.dart';
-import 'package:xozmag_admin/features/customer/ui/details/provider/customer_details_controller.dart';
-import 'package:xozmag_admin/features/customer/ui/details/widgets/customer_image_slot.dart';
 
-import '../../../../../shared/widgets/app_elevated_button.dart';
-import '../../../../../shared/widgets/app_outlined_button.dart';
-import '../../../../../shared/widgets/app_text_field.dart';
 import '/core/styles/app_text_styles.dart';
 import '/core/styles/app_theme.dart';
 import '/shared/widgets/app_container.dart';
+import '/shared/widgets/app_elevated_button.dart';
+import '/shared/widgets/app_outlined_button.dart';
+import '/shared/widgets/app_text_field.dart';
+import '../provider/customer_details_controller.dart';
+import 'customer_image_slot.dart';
 
 class CustomerDataForms extends StatelessWidget {
   const CustomerDataForms({super.key});
@@ -68,16 +67,13 @@ class CustomerDataForms extends StatelessWidget {
               ],
             ),
             Padding(
-              padding:
-              const EdgeInsets.only(top: 4.0),
+              padding: const EdgeInsets.only(top: 4.0),
               child: Row(
                 spacing: 12,
                 children: [
                   Expanded(
                     child: AppOutlinedButton(
-                      onPressed: () {
-
-                      },
+                      onPressed: () {},
                       isEnabled: false,
                       label: 'base.actions.cancel'.tr(),
                     ),

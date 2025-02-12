@@ -1,16 +1,15 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../../shared/widgets/app_text_field.dart';
-import '../../../../shared/widgets/item_list_category.dart';
-import '../../../../shared/widgets/item_list_staff.dart';
-import '../../../catalogs/domain/entities/category.dart';
-import '../../../staff/domain/entities/staff.dart';
-import '../../../staff/domain/entities/staff_role.dart';
+
 import '/core/styles/app_box_shadows.dart';
 import '/core/styles/app_text_styles.dart';
 import '/core/styles/app_theme.dart';
+import '/shared/widgets/app_text_field.dart';
 import '/shared/widgets/box.dart';
+import '/shared/widgets/item_list_staff.dart';
+import '../../../staff/domain/entities/staff.dart';
+import '../../../staff/domain/entities/staff_role.dart';
 
 class SlotStaff extends StatelessWidget {
   const SlotStaff({super.key});

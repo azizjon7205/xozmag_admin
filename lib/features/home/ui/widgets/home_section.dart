@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
-import 'package:xozmag_admin/core/styles/app_text_styles.dart';
-import 'package:xozmag_admin/features/home/ui/widgets/drawer_layout.dart';
-import 'package:xozmag_admin/features/home/ui/widgets/home_body.dart';
-import 'package:xozmag_admin/features/main_controller.dart';
-import '../../../../shared/widgets/app_outlined_button.dart';
-import '/core/styles/app_theme.dart';
-import '/shared/widgets/box.dart';
 
-import '../provider/home_controller.dart';
+import '/core/styles/app_text_styles.dart';
+import '/core/styles/app_theme.dart';
+import '/shared/widgets/app_outlined_button.dart';
+import '../../../main_controller.dart';
+import 'home_body.dart';
 
 class HomeSection extends StatelessWidget {
   const HomeSection({super.key});
-
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +29,11 @@ class HomeSection extends StatelessWidget {
             children: [
               AppOutlinedButton(
                 onPressed: () {
-                  context.read<MainController>().scaffoldKey.currentState?.openDrawer();
+                  context
+                      .read<MainController>()
+                      .scaffoldKey
+                      .currentState
+                      ?.openDrawer();
                 },
                 borderRadius: 10,
                 padding: const EdgeInsets.all(10.0),
@@ -66,8 +66,7 @@ class HomeSection extends StatelessWidget {
                     height: 48,
                     width: 48,
                     decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: colors(context).bgWeak),
+                        shape: BoxShape.circle, color: colors(context).bgWeak),
                     child: SvgPicture.asset(
                       'assets/icons/ic_avatar.svg',
                       height: 48,

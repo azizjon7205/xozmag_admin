@@ -2,8 +2,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../core/styles/app_text_styles.dart';
-import '../../../../core/styles/app_theme.dart';
+import '/core/styles/app_text_styles.dart';
+import '/core/styles/app_theme.dart';
 import '../provider/home_controller.dart';
 
 class SlotStatistics extends StatelessWidget {

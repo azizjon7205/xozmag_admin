@@ -2,21 +2,17 @@ import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:xozmag_admin/features/catalogs/domain/entities/subcategory.dart';
-import 'package:xozmag_admin/features/catalogs/ui/widgets/create_subcategory_section.dart';
-import 'package:xozmag_admin/features/catalogs/ui/widgets/item_list_subcategory.dart';
-import 'package:xozmag_admin/shared/widgets/app_elevated_button.dart';
 
-import '../../domain/entities/category.dart';
-import '../widgets/create_category_section.dart';
-import '../../../../shared/widgets/item_list_category.dart';
+import '/core/styles/app_theme.dart';
+import '/shared/widgets/app_elevated_button.dart';
 import '/shared/widgets/app_expanded_bar.dart';
 import '/shared/widgets/app_outlined_button.dart';
-import '/core/styles/app_text_styles.dart';
-import '/core/styles/app_theme.dart';
-import '/shared/widgets/app_button.dart';
 import '/shared/widgets/app_text_field.dart';
 import '/shared/widgets/sizes.dart';
+import '../../domain/entities/category.dart';
+import '../../domain/entities/subcategory.dart';
+import '../widgets/create_subcategory_section.dart';
+import '../widgets/item_list_subcategory.dart';
 
 @RoutePage()
 class SubcategoriesScreen extends StatelessWidget {
@@ -33,9 +29,7 @@ class SubcategoriesScreen extends StatelessWidget {
         actions: [
           const Width(20),
           AppOutlinedButton(
-            onPressed: () {
-
-            },
+            onPressed: () {},
             borderRadius: 10.0,
             padding: const EdgeInsets.all(10.0),
             prefix: Icon(
@@ -67,7 +61,7 @@ class SubcategoriesScreen extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-               Expanded(
+              Expanded(
                 flex: 5,
                 child: AppTextField(
                   contentPadding:
