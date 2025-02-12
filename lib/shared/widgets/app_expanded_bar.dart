@@ -19,6 +19,7 @@ class AppExpandedBar extends StatelessWidget implements PreferredSizeWidget {
     this.backgroundColor,
     this.centerTitle = false,
     this.bottom,
+    this.onDrawerOpen
   });
 
   final bool hasLeading;
@@ -30,6 +31,7 @@ class AppExpandedBar extends StatelessWidget implements PreferredSizeWidget {
   final Color? backgroundColor;
   final bool centerTitle;
   final Widget? bottom;
+  final VoidCallback? onDrawerOpen;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +44,7 @@ class AppExpandedBar extends StatelessWidget implements PreferredSizeWidget {
         padding: const EdgeInsets.symmetric(horizontal: 32),
         child: Row(
           children: [
-            if (hasLeading) ...[
+            if (hasLeading && onDrawerOpen == null) ...[
               AppOutlinedButton(
                 onPressed: () {
                   navController.maybePop();
@@ -56,6 +58,18 @@ class AppExpandedBar extends StatelessWidget implements PreferredSizeWidget {
               ),
               const Width(20)
             ],
+            if (onDrawerOpen != null) ...[
+              AppOutlinedButton(
+                onPressed: onDrawerOpen,
+                prefix: Icon(
+                  Icons.menu,
+                  size: 20,
+                  color: colors(context).iconSub,
+                ),
+              ),
+              const Width(20)
+            ],
+
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

@@ -6,6 +6,7 @@ class Order {
   String paymentType;
   int deliveryPrice;
   int totalPrice;
+  DateTime? dateTime;
 
   Order({
     required this.id,
@@ -14,5 +15,6 @@ class Order {
     required this.paymentType,
     required this.deliveryPrice,
     required this.totalPrice,
+    this.dateTime
   });
 }

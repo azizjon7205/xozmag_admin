@@ -9,8 +9,6 @@ import '../../shared/models/app_lang.dart';
 import '../injections.dart';
 
 class Helper {
-
-
   /// Get language
   static AppLang getLang() {
     AppLang? lang;
@@ -69,4 +67,16 @@ class Helper {
     return formattedDate;
   }
 
+  static String formatCurrency(int amount) {
+    // Create a formatter for the desired currency format
+    final NumberFormat formatter = NumberFormat.currency(
+      locale: 'uz_UZ', // Uzbek locale
+      symbol: "so'm", // Currency symbol
+      decimalDigits: 0, // No decimals for whole numbers
+    );
+
+    return formatter
+        .format(amount)
+        .replaceAll(',', ' ');
+  }
 }

@@ -5,6 +5,9 @@
     "search_hint": "Qidiruv...",
     "from": "dan",
     "to": "gacha",
+    "day": "Kun",
+    "month": "Oy",
+    "year": "Yil",
     "actions": {
       "label": "Amallar",
       "confirm": "Tasdiqlash",
@@ -134,6 +137,7 @@
     "in_progress": "Jarayondagi buyurtmalar",
     "completed": "Tugallangan buyurtmalar",
     "id": "Buyurtma id",
+    "date": "Sana",
     "customer": {
       "phone": "Buyurtmachi raqami"
     },
@@ -166,6 +170,68 @@
         "label": "To'luv turi",
         "hint": "Hammasi"
       }
+    },
+    "details": {
+      "title": "Buyurtma Id: {}",
+      "full_name_abbr": "F.I.SH",
+      "customer": "Buyurtmachi",
+      "phone_number": "Telefon raqam",
+      "address": "Manzil",
+      "payment": {
+        "label": "To'lovlar",
+        "products": "{} ta tovar",
+        "delivery": "Yetkazib berish",
+        "promo": "Promokod",
+        "discount": "Chegirma",
+        "total": "Umumiy"
+      },
+      "status": {
+        "label": "Holati",
+        "status": "Holati",
+        "by_whom": "Kim tomonidan",
+        "date": "Sana"
+      },
+      "products": {
+        "label": "Tovarlar",
+        "image": "Rasm",
+        "name": "Tovar nomi",
+        "attribute": "Turi",
+        "amount": "Miqdori",
+        "status": "Statusi",
+        "price": "Narxi"
+      }
+    }
+  },
+  "customer": {
+    "details": {
+      "title": "Foydalanuvchi ma'lumotlari",
+      "subtitle": "User ma'lumotlarini tekshirish yoki yangilashingiz mumkin",
+      "info": "Mijoz ma'lumotlari",
+      "image_title": "Rasm",
+      "image_subtitle": "Min 400x400px, PNG or JPEG",
+      "addresses": "Manzillar",
+      "full_name": "Ism sharifi",
+      "phone_number": "Telefon raqami",
+      "total_orders": "Jami buyurtmalar"
+    }
+  },
+  "home" : {
+    "by_date": "Sana bo'yicha",
+    "interval": "Oraliq",
+    "total_income": "Umumiy daromad",
+    "orders": "Buyurtmalar",
+    "net_profit": "Sof foyda",
+    "sales": "Sotuvlar",
+    "drawer": {
+      "menu": "Menu",
+      "sections": "Bo'limlar",
+      "main": "Asosiy bo'lim",
+      "categories": "Kategoriyalar",
+      "add_product": "Tovar qo'shish",
+      "staff": "Xodimlar",
+      "orders": "Buyurtmalar",
+      "settings": "Sozlamalar",
+      "logout": "Chiqish"
     }
   }
 }

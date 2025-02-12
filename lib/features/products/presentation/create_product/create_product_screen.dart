@@ -3,6 +3,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../main_controller.dart';
 import '/shared/widgets/app_elevated_button.dart';
 import '/shared/widgets/app_expanded_bar.dart';
 import 'provider/product_controller.dart';
@@ -21,6 +22,9 @@ class CreateProductScreen extends StatelessWidget {
           title: 'product.page_title'.tr(),
           subtitle: 'product.page_subtitle'.tr(),
           actions: [AppElevatedButton(label: "base.actions.add".tr())],
+          onDrawerOpen: () {
+            context.read<MainController>().scaffoldKey.currentState?.openDrawer();
+          },
         ),
         body: const Padding(
           padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),

@@ -4,13 +4,13 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../domain/entities/category.dart';
 import '/core/router/router.dart';
 import '/core/router/router.gr.dart';
 import '/core/styles/app_theme.dart';
 import '/shared/models/menu_item.dart';
 import '/shared/widgets/sizes.dart';
 import '/shared/widgets/spaced_row.dart';
+import '../../features/catalogs/domain/entities/category.dart';
 
 class ItemListCategory extends StatelessWidget {
   const ItemListCategory({super.key, required this.category});
@@ -72,16 +72,20 @@ class ItemListCategory extends StatelessWidget {
                 children: [
                   Text(
                     category.name,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: typography(context).bodyMedium?.copyWith(
                         color: colors(context).textStrong,
-                        fontWeight: FontWeight.w500),
+                        fontWeight: FontWeight.w500,
+                    ),
                   ),
                   const Height(4),
                   Text(
                     '${category.count} ta ichki kategoriyasi',
                     style: typography(context).bodySmall?.copyWith(
                         color: colors(context).textSub,
-                        fontWeight: FontWeight.w400),
+                        fontWeight: FontWeight.w400,
+                    ),
                   ),
                 ],
               ),
@@ -104,7 +108,7 @@ class ItemListCategory extends StatelessWidget {
                           strokeAlign: BorderSide.strokeAlignInside),
                       boxShadow: [
                         BoxShadow(
-                          color: const Color(0x0E121B1A).withOpacity(0.1),
+                          color: const Color(0x0E121B1A).withValues(alpha: 0.1),
                           offset: const Offset(0, 16),
                           spreadRadius: -12,
                           blurRadius: 32,

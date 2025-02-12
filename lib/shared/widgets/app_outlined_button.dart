@@ -17,12 +17,14 @@ class AppOutlinedButton extends StatelessWidget {
       this.borderRadius = 8,
         this.padding,
       this.onPressed,
+        this.isEnabled = true,
        this.label});
 
   final double? width;
   final Widget? prefix;
   final Widget? suffix;
   final String? label;
+  final bool isEnabled;
   final bool isLabelPrimary;
   final bool isWidthMatch;
   final double borderRadius;
@@ -32,10 +34,10 @@ class AppOutlinedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Box(
-      onTap: onPressed,
+      onTap: isEnabled ? onPressed : null,
       padding: padding ?? const EdgeInsets.all(8.0).copyWith(left: 10.0),
       radius: borderRadius,
-      color: colors(context).bgWhite,
+      color: isEnabled ? colors(context).bgWhite : colors(context).bgWeak,
       shadows: [AppBoxShadows.regularXSmall],
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -43,7 +45,7 @@ class AppOutlinedButton extends StatelessWidget {
         children: [
           if (prefix != null) ...[
             prefix ?? const SizedBox.shrink(),
-            const Width(4),
+            if (label != null) const Width(4),
           ],
           if (label != null)
             ...[
@@ -51,7 +53,7 @@ class AppOutlinedButton extends StatelessWidget {
               Text(
                 label!,
                 style: AppTextStyles.paragraphSmall
-                    .copyWith(color: colors(context).textSub),
+                    .copyWith(color: isEnabled ? colors(context).textSub : colors(context).textDisabled),
               ),
               const Width(4),
             ],

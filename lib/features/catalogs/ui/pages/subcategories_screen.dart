@@ -9,7 +9,7 @@ import 'package:xozmag_admin/shared/widgets/app_elevated_button.dart';
 
 import '../../domain/entities/category.dart';
 import '../widgets/create_category_section.dart';
-import '../widgets/item_list_category.dart';
+import '../../../../shared/widgets/item_list_category.dart';
 import '/shared/widgets/app_expanded_bar.dart';
 import '/shared/widgets/app_outlined_button.dart';
 import '/core/styles/app_text_styles.dart';

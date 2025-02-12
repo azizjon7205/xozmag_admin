@@ -10,9 +10,9 @@ import '/core/styles/app_theme.dart';
 import '/shared/models/menu_item.dart';
 import '/shared/widgets/app_outlined_button.dart';
 import '/shared/widgets/sizes.dart';
-import '../../domain/entities/staff.dart';
-import '../../domain/entities/staff_role.dart';
-import '../provider/staff_controller.dart';
+import '../../features/staff/domain/entities/staff.dart';
+import '../../features/staff/domain/entities/staff_role.dart';
+import '../../features/staff/ui/provider/staff_controller.dart';
 
 class ItemListStaff extends StatelessWidget {
   const ItemListStaff({super.key, required this.staff});

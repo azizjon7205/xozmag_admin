@@ -2,18 +2,18 @@ import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
+import 'package:xozmag_admin/features/main_controller.dart';
 import 'package:xozmag_admin/shared/widgets/app_elevated_button.dart';
 
-import '../../domain/entities/category.dart';
-import '../widgets/create_category_section.dart';
-import '../widgets/item_list_category.dart';
+import '/core/styles/app_theme.dart';
 import '/shared/widgets/app_expanded_bar.dart';
 import '/shared/widgets/app_outlined_button.dart';
-import '/core/styles/app_text_styles.dart';
-import '/core/styles/app_theme.dart';
-import '/shared/widgets/app_button.dart';
 import '/shared/widgets/app_text_field.dart';
 import '/shared/widgets/sizes.dart';
+import '../../../../shared/widgets/item_list_category.dart';
+import '../../domain/entities/category.dart';
+import '../widgets/create_category_section.dart';
 
 @RoutePage()
 class CategoriesScreen extends StatelessWidget {
@@ -25,6 +25,9 @@ class CategoriesScreen extends StatelessWidget {
       appBar: AppExpandedBar(
         title: 'category.title'.tr(),
         subtitle: 'category.subtitle'.tr(),
+        onDrawerOpen: () {
+          context.read<MainController>().scaffoldKey.currentState?.openDrawer();
+        },
         actions: [
           const Width(20),
           AppElevatedButton(

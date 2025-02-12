@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../main_controller.dart';
 import '/core/styles/app_text_styles.dart';
 import '/core/styles/app_theme.dart';
 import '/shared/widgets/app_expanded_bar.dart';
@@ -27,6 +28,9 @@ class OrdersScreen extends StatelessWidget {
         appBar: AppExpandedBar(
           title: 'order.title'.tr(),
           subtitle: 'order.subtitle'.tr(),
+          onDrawerOpen: () {
+            context.read<MainController>().scaffoldKey.currentState?.openDrawer();
+          },
         ),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 24),

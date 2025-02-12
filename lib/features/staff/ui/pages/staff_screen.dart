@@ -7,8 +7,9 @@ import 'package:xozmag_admin/features/staff/domain/entities/staff.dart';
 import 'package:xozmag_admin/features/staff/domain/entities/staff_role.dart';
 import 'package:xozmag_admin/features/staff/ui/provider/staff_controller.dart';
 import 'package:xozmag_admin/features/staff/ui/widgets/create_staff_section.dart';
-import 'package:xozmag_admin/features/staff/ui/widgets/item_list_staff.dart';
+import 'package:xozmag_admin/shared/widgets/item_list_staff.dart';
 
+import '../../../main_controller.dart';
 import '/core/styles/app_theme.dart';
 import '/shared/widgets/app_expanded_bar.dart';
 import '/shared/widgets/app_outlined_button.dart';
@@ -28,6 +29,9 @@ class StaffScreen extends StatelessWidget {
         appBar: AppExpandedBar(
           title: 'staff.title'.tr(),
           subtitle: 'staff.subtitle'.tr(),
+          onDrawerOpen: () {
+            context.read<MainController>().scaffoldKey.currentState?.openDrawer();
+          },
           actions: [
             const Width(20),
             AppElevatedButton(
